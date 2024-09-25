@@ -5,16 +5,16 @@ namespace MarcenariaExclusiveAPI.Models
     public enum EstiloArmario
     {
        [Description("Livre")]
-        Livre = 1,
+        LIVRE,
 
         [Description("Portas e gavetas")]
-        PortasEGavetas = 2,
+        PORTASEGAVETAS,
 
         [Description("Apenas portas")]
-        ApenasPortas = 3,
+        APENASPORTAS = 3,
 
         [Description("Apenas gavetas")]
-        ApenasGavetas = 4
+        APENASGAVETAS = 4
     }
 
 }

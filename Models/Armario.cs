@@ -18,8 +18,8 @@
         public int QuantidadeGavetas { get; set; }
         public double ProporcaoPorta { get; set; }
         public double ProporcaoGaveta { get; set; }
-        public EstiloArmario Estilo { get; set; }
-
+        //  public EstiloArmario Estilo { get; set; }
+        public int Estilo { get; set; } // Ajustar para funcionar com ENUM
 
         public Armario(MovelDTO movelDTO)
         {

@@ -4,6 +4,17 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configura o CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PoliticaCors", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -32,6 +43,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// Aplica a política de CORS
+app.UseCors("PoliticaCors");
 
 app.UseHttpsRedirection();
 

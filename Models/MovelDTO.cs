@@ -42,8 +42,8 @@ namespace MarcenariaExclusiveAPI.Models
         public double ProporcaoGaveta { get; set; }
 
         [Required(ErrorMessage = "O campo Estilo é obrigatório.")]
-        public EstiloArmario Estilo { get; set; }
-
+        //   public EstiloArmario Estilo { get; set; } - Ajustar para funcionar com ENUM
+        public int Estilo { get; set; } // Ajustar para funcionar com ENUM
     }
 
 }
