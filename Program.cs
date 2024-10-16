@@ -20,6 +20,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 // Registrar o serviço
 builder.Services.AddScoped<IArmarioService, ArmarioService>();
+builder.Services.AddScoped<IGeradorImagemService, GeradorImagem3DService>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

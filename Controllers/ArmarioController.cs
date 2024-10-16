@@ -30,13 +30,14 @@ namespace MarcenariaExclusiveAPI.Controllers
                                        .SelectMany(v => v.Errors)
                                        .Select(e => e.ErrorMessage)
                                        .ToList();
-
+                Console.WriteLine("PLANO NAO GERADO " + DateTime.Now);
                 return BadRequest(erros);
             }
 
             PlanoDTO planoDTO = _armarioService.CalcularPlanoCorte(movel);
 
             // Processa o usuário aqui (por exemplo, salvar no banco de dados)
+            Console.WriteLine("PLANO GERADO"  + planoDTO);
             return Ok(planoDTO);
         }
 
