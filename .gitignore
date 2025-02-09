@@ -1,0 +1,9 @@
+# Pastas e arquivos do Visual Studio
+.vs/
+
+# Build, binários e pacotes NuGet
+bin/
+obj/
+*.dll
+*.exe
+ESCOPO.txt
