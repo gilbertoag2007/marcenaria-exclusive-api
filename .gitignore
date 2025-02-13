@@ -1,9 +1,19 @@
 # Pastas e arquivos do Visual Studio
 .vs/
 
-# Build, binários e pacotes NuGet
+# Build, binários
 bin/
 obj/
+
+src/MarcenariaExclusive.API/bin/
+src/MarcenariaExclusive.API/obj/
+tests/MarcenariaExclusive.Tests/bin/
+tests/MarcenariaExclusive.Tests/obj/
+
 *.dll
 *.exe
-ESCOPO.txt
+
+
+
+
+

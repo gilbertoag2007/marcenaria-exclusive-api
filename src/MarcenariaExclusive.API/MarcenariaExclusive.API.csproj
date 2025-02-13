@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>067dbc0d-c4a3-42d4-a2c3-8b9a17d8554a</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\DTOs\" />
+    <Folder Include="Application\Mappings\" />
+    <Folder Include="Application\Interfaces\" />
+    <Folder Include="Infrastructure\Configurations\" />
+    <Folder Include="Infrastructure\Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Domain\Enums\" />
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Domain\" />
+  </ItemGroup>
+
+</Project>
