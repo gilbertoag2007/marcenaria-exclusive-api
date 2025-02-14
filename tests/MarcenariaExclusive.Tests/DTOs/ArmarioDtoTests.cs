@@ -35,7 +35,7 @@ public class ArmarioDtoTests
     {
         var dto = new ArmarioDto { Altura = 120, Largura = 29, Profundidade = 71, NomeProjeto = "Projeto Teste", Email = "teste@email.com" };
         var results = ValidateModel(dto);
-        Assert.Contains(results, v => v.ErrorMessage.Contains("\"A profundidade deve estar entre 20 e 70 cm."));
+        Assert.Contains(results, v => v.ErrorMessage.Contains("A profundidade deve estar entre 20 e 70 cm."));
     }
     [Fact]
     public void ArmarioDto_DeveSerInvalido_QuandoEmailNaoInformado()

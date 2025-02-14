@@ -1,29 +1,50 @@
 ﻿
 
 using MarcenariaExclusiveAPI.Application.DTOs;
+using MarcenariaExclusiveAPI.Application.DTOs;
 using System.ComponentModel.DataAnnotations;
 
 namespace MarcenariaExclusiveAPI.Domain.Entities
 {
-    // Classe Armario que implementa a interface IMovel
-    public class Armario // Classe DTO  para representar as propriedades de armario recebidas na API 
+    /// <summary>
+    /// Classe que representa um armário dentro do domínio da aplicação.
+    /// Implementa a interface IMovel e serve como um DTO para representar as propriedades recebidas na API.
+    /// </summary>
+    public class Armario
     {
-        public string? Email { get; set; } // E-mail do usuario que cadastrou o projeto
+        /// <summary>
+        /// E-mail do usuário que cadastrou o projeto.
+        /// </summary>
+        public string? Email { get; set; }
 
-        public string? NomeProjeto { get; set; } // Nome ou descricao do projeto
+        /// <summary>
+        /// Nome ou descrição do projeto.
+        /// </summary>
+        public string? NomeProjeto { get; set; }
 
-        public int Altura { get; set; } // Altura em centimetros
+        /// <summary>
+        /// Altura do armário em centímetros.
+        /// </summary>
+        public int Altura { get; set; }
 
-        public int Largura { get; set; } // Largura em centimetros
+        /// <summary>
+        /// Largura do armário em centímetros.
+        /// </summary>
+        public int Largura { get; set; }
 
-        public int Profundidade { get; set; } // Profundidade do movel em centimetros
+        /// <summary>
+        /// Profundidade do móvel em centímetros.
+        /// </summary>
+        public int Profundidade { get; set; }
 
-        public List<Nivel> Niveis { get; set; } = new List<Nivel>(); // Niveis que ocupam o espaco total do movel
+        /// <summary>
+        /// Lista de níveis que ocupam o espaço total do móvel.
+        /// </summary>
+        public List<Nivel> Niveis { get; set; } = new List<Nivel>();
 
-
+        /// <summary>
+        /// Construtor padrão da classe Armario.
+        /// </summary>
         public Armario() { }
     }
-
-    
-
 }

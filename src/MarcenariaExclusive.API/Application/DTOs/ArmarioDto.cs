@@ -5,11 +5,9 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
     public class ArmarioDto // Classe DTO  para representar as propriedades de armario recebidas na API 
     {
         [Required(ErrorMessage = "O e-mail é obrigatório.")]
-        [Range(8, 100, ErrorMessage = "O e-mail deve ter entre 8 e 100 caracteres.")]
         public string? Email { get; set; } // E-mail do usuario que cadastrou o projeto
 
         [Required(ErrorMessage = "O nome do projeto é obrigatório.")]
-        [Range(8, 100, ErrorMessage = "O nome do projeto deve ter entre 3 e 60 caracteres.")]
         public string? NomeProjeto { get; set; } // Nome ou descricao do projeto
 
         [Required(ErrorMessage = "A altura é obrigatória.")]

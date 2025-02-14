@@ -21,10 +21,6 @@
     <Folder Include="Application\Interfaces\" />
     <Folder Include="Infrastructure\Configurations\" />
     <Folder Include="Infrastructure\Services\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Domain\Enums\" />
-    <Folder Include="Domain\Entities\" />
-    <Folder Include="Domain\" />
   </ItemGroup>
 
 </Project>

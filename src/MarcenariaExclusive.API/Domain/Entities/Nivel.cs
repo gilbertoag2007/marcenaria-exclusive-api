@@ -2,31 +2,58 @@
 
 namespace MarcenariaExclusiveAPI.Domain.Entities
 {
-    public class Nivel // Classe modelo para representar as caracteristica de cada nivel do armario
+    /// <summary>
+    /// Classe modelo para representar as características de cada nível do armário.
+    /// </summary>
+    public class Nivel
     {
-        public int numeroNivel { get; set; } // numero para identificar o nivel
+        /// <summary>
+        /// Número identificador do nível.
+        /// </summary>
+        public int numeroNivel { get; set; }
 
-        public double percentualEspaco { get; set; } // percentual de utilizacao do espaco considerando a altura do movel
+        /// <summary>
+        /// Percentual de utilização do espaço considerando a altura do móvel.
+        /// </summary>
+        public double percentualEspaco { get; set; }
 
-        public ConteudoNivel conteudoNivel { get; set; } // tipo de conteudo que ocupa o espaço do nivel dentro do movel
+        /// <summary>
+        /// Tipo de conteúdo que ocupa o espaço do nível dentro do móvel.
+        /// </summary>
+        public ConteudoNivel conteudoNivel { get; set; }
 
-        public int QuantidadePrateleiras { get; set; } // Quantidade de prateleiras internas dentro do nivel
+        /// <summary>
+        /// Quantidade de prateleiras internas dentro do nível.
+        /// </summary>
+        public int QuantidadePrateleiras { get; set; }
 
-        public int QuantidadeGavetas { get; set; } // Quantidade de gavetas dentro do nivel
+        /// <summary>
+        /// Quantidade de gavetas dentro do nível.
+        /// </summary>
+        public int QuantidadeGavetas { get; set; }
 
-        public int QuantidadePortas { get; set; } // Quantidade de portas dentro do nivel
+        /// <summary>
+        /// Quantidade de portas dentro do nível.
+        /// </summary>
+        public int QuantidadePortas { get; set; }
 
-        public int QuantidadeDivisoes { get; set; } // Quantidade de divisoes verticais internas
+        /// <summary>
+        /// Quantidade de divisões verticais internas.
+        /// </summary>
+        public int QuantidadeDivisoes { get; set; }
 
+        /// <summary>
+        /// Construtor padrão da classe Nivel.
+        /// </summary>
         public Nivel() { }
+
+        /// <summary>
+        /// Retorna uma representação em string do objeto Nivel.
+        /// </summary>
+        /// <returns>Uma string representando o nível e suas características.</returns>
         public override string ToString()
         {
-
-            return $"numeroNivel: {numeroNivel}, percentualEspaco: {percentualEspaco}, conteudoNivel: {conteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}  ";
-
+            return $"numeroNivel: {numeroNivel}, percentualEspaco: {percentualEspaco}, conteudoNivel: {conteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}";
         }
-
-
-
     }
 }
