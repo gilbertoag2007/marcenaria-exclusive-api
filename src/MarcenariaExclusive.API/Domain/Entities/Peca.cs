@@ -8,17 +8,22 @@ public class Peca
     /// <summary>
     /// Largura da peça em centímetros.
     /// </summary>
-    public int Largura { get; set; }
+    public double Largura { get; set; }
 
     /// <summary>
     /// Altura da peça em centímetros.
     /// </summary>
-    public int Altura { get; set; }
+    public double Altura { get; set; }
 
     /// <summary>
     /// Espessura da peça.
     /// </summary>
     public Espessura Espessura { get; set; }
+
+/// <summary>
+    /// Quantidade de peças.
+    /// </summary>
+    public int Quantidade { get; set; }
 
     /// <summary>
     /// Finalidade da peça.
@@ -31,12 +36,14 @@ public class Peca
     /// <param name="largura">Largura da peça em centímetros.</param>
     /// <param name="altura">Altura da peça em centímetros.</param>
     /// <param name="espessura">Espessura da peça.</param>
+/// <param name="quantidade"> Quantidade de peças.</param>
     /// <param name="tipoPeca">Finalidade da peça.</param>
-    public Peca(int largura, int altura, Espessura espessura, FinalidadePeca tipoPeca)
+    public Peca(double largura, double altura, Espessura espessura, int quantidade, FinalidadePeca tipoPeca)
     {
         Largura = largura;
         Altura = altura;
         Espessura = espessura;
+        Quantidade= quantidade;
         TipoPeca = tipoPeca;
     }
 }
