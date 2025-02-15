@@ -44,14 +44,37 @@ planoCorte.Pecas.add(
  new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.DivisaoNivel));// redução de 3cm por conta da espessura das duas peças laterais
 }
 
+double alturaUtil = CalcularAlturaNivel(armario.Altura -14, nível.PercentualEspaco);  // desconta 14 centímetros da altura dos acabamentos inferiores e superiores.
+
+foreach (var nível in armario.Niveis)
+
+
+
+
+if (quantidadeDivisaoNivel > 1){ 
+
+if(nivel.numeroNivel <> 1 &&
+ nivel.numeroNivel <> quantidadeDivisaoNivel)
+{
+Double alturaNivel = CalcularAlturaNivel(alturaUtil, nível.PercentualEspaco) - 1,5; // desconta 1,5 cm da chapa que é a divisão de nivel
+}
+
+} eles{
+
+
+Double alturaNivel = CalcularAlturaNivel(armario.Altura, nível.PercentualEspaco);
+
+}
+
+}
+
+
 
 
 }
 
 
-foreach (var nível in Armário.Niveis)
 
-Double alturai
 
 
         }
