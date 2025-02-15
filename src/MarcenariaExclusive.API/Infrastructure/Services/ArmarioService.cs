@@ -28,14 +28,18 @@ Peca acabamentoInferior = new Peca(armario.Largura, 7, Espessura.Milimetros15,1 
 Peca acabamentoSuperior = new Peca(armario.Largura, 7, Espessura.Milimetros15,1 FinalidadePeca.AcabamentoSuperior);
 
 Peca fundo = new Peca(armario.Largura, armário.Altura, Espessura.Milimetros6,1 FinalidadePeca.Fundo);
-
-
-
-
-
-
         }
 
+/// <summary>
+/// Calcula a altura de um nível dentro do armário com base na altura total e no percentual de espaço utilizado.
+/// </summary>
+/// <param name="alturaArmario">A altura total do armário em centímetros.</param>
+/// <param name="percentualEspaco">O percentual de espaço ocupado pelo nível dentro do armário.</param>
+/// <returns>A altura correspondente do nível em centímetros.</returns>
+public double CalcularAlturaNivel(int alturaArmario, double percentualEspaco)
+{
+    return (alturaArmario * percentualEspaco / 100);
+}
 
 
         private void CalcularPecasLaterais(Armario armario)
