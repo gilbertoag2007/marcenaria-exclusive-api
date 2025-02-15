@@ -17,17 +17,43 @@ namespace MarcenariaExclusiveAPI.Infrastructure.Services
 PlanoCorte planoCorte = new PlanoCorte();
 planoCorte.Armario = armário;
 
-Peca laterais = new Peca(armario.Largura, armário.Altura, Espessura.Milimetros15,2 FinalidadePeca.Lateral);
+planoCorte.Pecas.add(
+ new Peca(armario.Largura, armário.Altura, Espessura.Milimetros15,2 FinalidadePeca.Lateral));
 
-Peca base = new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.Base);// redução de 3cm por conta da espessura das duas peças laterais
+planoCorte.Pecas.add(
+new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.Base));// redução de 3cm por conta da espessura das duas peças laterais
 
-Peca topo = new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.Topo);// redução de 3cm por conta da espessura das duas peças laterais
+planoCorte.Pecas.add(
+ new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.Topo));// redução de 3cm por conta da espessura das duas peças laterais
 
-Peca acabamentoInferior = new Peca(armario.Largura, 7, Espessura.Milimetros15,1 FinalidadePeca.AcabamentoInferior);
+planoCorte.Pecas.add(
+ new Peca(armario.Largura, 7, Espessura.Milimetros15,1 FinalidadePeca.AcabamentoInferior));
 
-Peca acabamentoSuperior = new Peca(armario.Largura, 7, Espessura.Milimetros15,1 FinalidadePeca.AcabamentoSuperior);
+planoCorte.Pecas.add(
+new Peca(armario.Largura, 7, Espessura.Milimetros15,1 FinalidadePeca.AcabamentoSuperior));
 
-Peca fundo = new Peca(armario.Largura, armário.Altura, Espessura.Milimetros6,1 FinalidadePeca.Fundo);
+planoCorte.Pecas.add(
+new Peca(armario.Largura, armario.Altura, Espessura.Milimetros6,1 FinalidadePeca.Fundo));
+
+int quantidadeDivisaoNivel = armario.Niveis.Count -1;// define quantidade de chapas para separar um nível de outro.
+
+for (int i = 1;i<quantidadeDivisaoNivel; i++)
+{
+
+planoCorte.Pecas.add(
+ new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.DivisaoNivel));// redução de 3cm por conta da espessura das duas peças laterais
+}
+
+
+
+}
+
+
+foreach (var nível in Armário.Niveis)
+
+Double alturai
+
+
         }
 
 /// <summary>
