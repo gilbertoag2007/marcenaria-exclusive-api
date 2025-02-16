@@ -21,14 +21,19 @@
         Lateral,
 
         /// <summary>
-        /// Peça usada como fundo do móvel.
+        /// Peça usada como fundo do armário.
         /// </summary>
-        Fundo,
+        FundoArmario,
 
         /// <summary>
         /// Peça usada para acabamento.
         /// </summary>
-        Acabamento,
+        AcabamentoSuperior,
+
+        /// <summary>
+        /// Peça usada para acabamento.
+        /// </summary>
+        AcabamentoInferior,
 
         /// <summary>
         /// Peça usada como divisão interna do móvel.
@@ -56,8 +61,14 @@
         FundoGaveta,
 
         /// <summary>
-        /// Peça usada como porta do móvel.
+        /// Peça usada como porta do armário.
         /// </summary>
-        Porta
+        PortaArmario,
+        
+        /// <summary>
+        /// Peça usada como porta de um dos níveis do armário.
+        /// </summary>
+        PortaNivel
+
     }
     }
