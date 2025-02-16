@@ -37,18 +37,10 @@ new Peca(armario.Largura, armario.Altura, Espessura.Milimetros6,1 FinalidadePeca
 
 int quantidadeDivisaoNivel = armario.Niveis.Count -1;// define quantidade de chapas para separar um nível de outro.
 
-for (int i = 1;i<quantidadeDivisaoNivel; i++)
-{
-
-planoCorte.Pecas.add(
- new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.DivisaoNivel));// redução de 3cm por conta da espessura das duas peças laterais
-}
 
 double alturaUtil = CalcularAlturaNivel(armario.Altura -14, nível.PercentualEspaco);  // desconta 14 centímetros da altura dos acabamentos inferiores e superiores.
 
-foreach (var nível in armario.Niveis)
-
-
+foreach (var nivel in armario.Niveis)
 
 
 if (quantidadeDivisaoNivel > 1){ 
@@ -56,7 +48,37 @@ if (quantidadeDivisaoNivel > 1){
 if(nivel.numeroNivel <> 1 &&
  nivel.numeroNivel <> quantidadeDivisaoNivel)
 {
-Double alturaNivel = CalcularAlturaNivel(alturaUtil, nível.PercentualEspaco) - 1,5; // desconta 1,5 cm da chapa que é a divisão de nivel
+
+planoCorte.Pecas.add(
+ new Peca(armario.Largura -3, armário.Altura, Espessura.Milimetros15,1 FinalidadePeca.DivisaoNivel));// redução de 3cm por conta da espessura das duas peças laterais
+}
+
+Double alturaNivel = CalcularAlturaNivel(alturaUtil, nível.PercentualEspaco) - 1.5; // desconta 1,5 cm da chapa que é a divisão de nivel
+
+if (nivel.QuantidadeDivisoes <> null && nivel.QuantidadeDivisoes > 0 )
+
+{
+
+for (int i =0;i < nivel.QuantidadeDivisoes; i++ )
+{
+planoCorte.Pecas.add(
+ new Peca(armario.Profundidade, alturaNivel - 1.5, Espessura.Milimetros15,1 FinalidadePeca.DivisaoInterna));// redução de 3cm por conta da espessura das duas peças laterais
+
+}
+
+}
+
+if (nivel.QuantidadePortas <> null && nivel.QuantidadePortas > 0)
+{
+
+
+}
+
+
+
+
+
+
 }
 
 } eles{
@@ -66,7 +88,6 @@ Double alturaNivel = CalcularAlturaNivel(armario.Altura, nível.PercentualEspaco
 
 }
 
-}
 
 
 
