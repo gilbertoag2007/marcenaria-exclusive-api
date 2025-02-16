@@ -3,7 +3,9 @@
 namespace MarcenariaExclusiveAPI.Domain.Entities
 {
     /// <summary>
-    /// Classe modelo para representar as características de cada nível do armário.
+    /// Classe modelo para representar as características de cada nível do armário. Os níveis ficam posicionados um em cima do outro ocupando toda largura disponível do armário e altura de acordo com o percentual definido no atributo percentualEspaco.
+
+
     /// </summary>
     public class Nivel
     {
