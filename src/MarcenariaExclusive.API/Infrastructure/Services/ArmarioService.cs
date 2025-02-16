@@ -72,6 +72,26 @@ if (nivel.QuantidadePortas <> null && nivel.QuantidadePortas > 0)
 {
 
 
+if(nivel.QuantidadePortas == 1)
+{
+planoCorte.Pecas.add(
+ new Peca(armario.Largura -1, alturaNivel - 1, Espessura.Milimetros15,1 FinalidadePeca.DivisaoInterna));// redução de 1cm na largura e altura para gerar um recuo de 0,5 centímetros em cada lado da porta.
+
+}else
+
+
+double larguraPorta =CalcularLarguraPorta(armário.Largura, nivel.QuantidadePorta); // largura de cada porta
+
+
+planoCorte.Pecas.add(
+ new Peca(larguraPorta, alturaNivel, Espessura.Milimetros15,nivel.QuantidadePorta, FinalidadePeca.PortaNivel));// redução de 1cm na largura e altura para gerar um recuo de 0,5 centímetros em cada lado da porta.
+
+
+{
+
+
+}
+
 }
 
 
@@ -100,6 +120,15 @@ Double alturaNivel = CalcularAlturaNivel(armario.Altura, nível.PercentualEspaco
 
         }
 
+// Calcula a largura de cada porta considerando a largura do armário e descontando 1 cm para dar um recuo de 0.5 cm em cada lado de casa porta.
+public double CalcularLarguraPorta(int larguraArmario, int quantidadePortas){
+
+return ((larguraArmario -1)/ quantidadePortas)- ((quantidadePortas -1) * 0.5)
+
+}
+
+
+
 /// <summary>
 /// Calcula a altura de um nível dentro do armário com base na altura total e no percentual de espaço utilizado.
 /// </summary>
@@ -112,9 +141,33 @@ public double CalcularAlturaNivel(int alturaArmario, double percentualEspaco)
 }
 
 
-        private void CalcularPecasLaterais(Armario armario)
+        public List<Peças>  CalcularPecasGavetas(int alturaNivel, int larguraArmario,int quantidadeGavetas, int profundidade armário, Nivel nivel)
         {
-            // Calcula os niveis do armario
+
+
+// Faces das gavetas
+
+// altura da face de cada gaveta
+double alturaGaveta= alturaNivel / quantidadeGavetas;
+           
+planoCorte.Pecas.add(
+ new Peca(larguraArmario -1, alturaGaveta, Espessura.Milimetros15,nivel.QuantidadeGavetas, FinalidadePeca.FaceGaveta));// redução de 1cm na largura de cada face da gaveta para gerar um recuo de 0,5 centímetros em cada.
+
+
+// Laterais Gavetas
+
+double alturaLateriasGavetas = alturaGaveta * 0.70;
+
+planoCorte.Pecas.add(
+ new Peca(profundidadeArmario -1, alturaLateriasGavetas, Espessura.Milimetros15,nivel.QuantidadeGavetas * 2, FinalidadePeca.FaceGaveta));// redução de 1cm na largura da lateral e 30% na altura de cada lateral da gaveta.
+
+
+// traseira gavetas
+
+
+
+
+
         }
 
 
