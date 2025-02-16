@@ -145,12 +145,14 @@ public double CalcularAlturaNivel(int alturaArmario, double percentualEspaco)
         {
 
 
+
+ List<Pecas> pecasGavetas = new List<Pecas>();
 // Faces das gavetas
 
 // altura da face de cada gaveta
 double alturaGaveta= alturaNivel / quantidadeGavetas;
            
-planoCorte.Pecas.add(
+   pecasGavetas.add(
  new Peca(larguraArmario -1, alturaGaveta, Espessura.Milimetros15,nivel.QuantidadeGavetas, FinalidadePeca.FaceGaveta));// redução de 1cm na largura de cada face da gaveta para gerar um recuo de 0,5 centímetros em cada.
 
 
@@ -158,14 +160,21 @@ planoCorte.Pecas.add(
 
 double alturaLateriasGavetas = alturaGaveta * 0.70;
 
-planoCorte.Pecas.add(
- new Peca(profundidadeArmario -1, alturaLateriasGavetas, Espessura.Milimetros15,nivel.QuantidadeGavetas * 2, FinalidadePeca.FaceGaveta));// redução de 1cm na largura da lateral e 30% na altura de cada lateral da gaveta.
+int larguraLateralGaveta = armario.profundidade -1;
+
+ pecasGavetas.add(
+ new Peca( larguraLateralGaveta , alturaLateriasGavetas, Espessura.Milimetros15,nivel.QuantidadeGavetas * 2, FinalidadePeca.LateralGaveta));// redução de 1cm na largura da lateral e 30% na altura de cada lateral da gaveta.
 
 
+int larguraTraseiraGaveta = larguraArmario -8;
 // traseira gavetas
 
+  pecasGavetas.add(
+ new Peca(   larguraTraseiraGaveta , alturaLateriasGavetas, Espessura.Milimetros15,nivel.QuantidadeGavetas, FinalidadePeca.TraseiraGaveta));// redução de 3 cm correspondente  a espessura da lateral do armário e lateral da gaveta mais 1 cm do trilho para os dois lados da gaveta totalizando 8 cm.
 
-
+// Fundo Gaveta
+  pecasGavetas.add(
+ new Peca(larguraTraseiraGaveta +3,   larguraLateralGaveta + 0.5 , Espessura.Milimetros6,nivel.QuantidadeGavetas, FinalidadePeca.TraseiraGaveta));
 
 
         }
