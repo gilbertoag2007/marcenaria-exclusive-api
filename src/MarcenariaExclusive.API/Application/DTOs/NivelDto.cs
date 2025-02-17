@@ -7,14 +7,13 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
     {
         [Required(ErrorMessage = "O número identificador do nível é obrigatório.")]
         [Range(1, 10, ErrorMessage = "O número identificador do nível deve estar entre 1 e 10.")]
-        public int numeroNivel { get; set; } // numero para identificar o nivel
+        public int NumeroNivel { get; set; } // numero para identificar o nivel
 
-        [Required(ErrorMessage = "O percentual de ocupação do espaço é obrigatório.")]
-        [Range(10, 100, ErrorMessage = "O percentual de ocupação do espaço do nível deve estar entre 10 e 100.")]
-        public double percentualEspaco { get; set; } // percentual do espaco que o nivel vai ocupar no armario
+        [Required(ErrorMessage = "A altura do nível em centimetros é obrigatória.")]
+        public double AlturaNivel { get; set; } // Altura do nivel em centimetros
 
         [Required(ErrorMessage = "O conteúdo do nível é obrigatório.")]
-        public ConteudoNivel conteudoNivel { get; set; } // tipo de conteudo que ocupa o espaço do nivel dentro do movel
+        public ConteudoNivel ConteudoNivel { get; set; } // tipo de conteudo que ocupa o espaço do nivel dentro do movel
 
         [Range(1, 100, ErrorMessage = "O percentual de ocupação do espaço do nível deve estar entre 10 e 100.")]
         public int? QuantidadePrateleiras { get; set; } // Quantidade de prateleiras internas dentro do nivel

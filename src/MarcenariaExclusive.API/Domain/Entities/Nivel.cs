@@ -12,17 +12,17 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         /// <summary>
         /// Número identificador do nível.
         /// </summary>
-        public int numeroNivel { get; set; }
+        public int NumeroNivel { get; set; }
 
         /// <summary>
         /// Percentual de utilização do espaço considerando a altura do móvel.
         /// </summary>
-        public double percentualEspaco { get; set; }
+        public double AlturaNivel { get; set; }
 
         /// <summary>
         /// Tipo de conteúdo que ocupa o espaço do nível dentro do móvel.
         /// </summary>
-        public ConteudoNivel conteudoNivel { get; set; }
+        public ConteudoNivel ConteudoNivel { get; set; }
 
         /// <summary>
         /// Quantidade de prateleiras internas dentro do nível.
@@ -55,7 +55,7 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         /// <returns>Uma string representando o nível e suas características.</returns>
         public override string ToString()
         {
-            return $"numeroNivel: {numeroNivel}, percentualEspaco: {percentualEspaco}, conteudoNivel: {conteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}";
+            return $"numeroNivel: {NumeroNivel}, AlturaNivel: {AlturaNivel}, conteudoNivel: {ConteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}";
         }
     }
 }

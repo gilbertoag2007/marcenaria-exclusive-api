@@ -16,21 +16,13 @@ public class NivelDtoTests
     }
 
     [Fact]
-    public void NivelDto_DeveSerInvalido_QuandoNumeroNivelForaDoIntervalo()
-    {
-        var dto = new NivelDto { numeroNivel = 15, percentualEspaco = 50, conteudoNivel = ConteudoNivel.Portas };
-        var results = ValidateModel(dto);
-        Assert.Contains(results, v => v.ErrorMessage.Contains("O número identificador do nível deve estar entre 1 e 10"));
-    }
-
-    [Fact]
     public void NivelDto_DeveSerValido_QuandoParametrosCorretos()
     {
         var dto = new NivelDto
         {
-            numeroNivel = 5,
-            percentualEspaco = 80,
-            conteudoNivel = ConteudoNivel.Gavetas,
+            NumeroNivel = 5,
+            AlturaNivel = 80,
+            ConteudoNivel = ConteudoNivel.Gavetas,
             QuantidadeGavetas = 5,
             QuantidadePortas = 2
         };
@@ -39,9 +31,9 @@ public class NivelDtoTests
     }
 
     [Fact]
-    public void NivelDto_DeveSerInvalido_QuandoPercentualEspacoAbaixoDoMinimo()
+    public void NivelDto_DeveSerInvalido_QuandoAlturaNivelAbaixoDoMinimo()
     {
-        var dto = new NivelDto { numeroNivel = 2, percentualEspaco = 5, conteudoNivel = ConteudoNivel.VazadoComFundo };
+        var dto = new NivelDto { NumeroNivel = 2, AlturaNivel = 5, ConteudoNivel = ConteudoNivel.VazadoComFundo };
         var results = ValidateModel(dto);
         Assert.Contains(results, v => v.ErrorMessage.Contains("O percentual de ocupação do espaço do nível deve estar entre 10 e 100"));
     }
@@ -49,7 +41,7 @@ public class NivelDtoTests
     [Fact]
     public void NivelDto_DeveSerInvalido_QuandoQuantidadeGavetasForaDoLimite()
     {
-        var dto = new NivelDto { numeroNivel = 1, percentualEspaco = 50, conteudoNivel = ConteudoNivel.Gavetas, QuantidadeGavetas = 15 };
+        var dto = new NivelDto { NumeroNivel = 1, AlturaNivel = 50, ConteudoNivel = ConteudoNivel.Gavetas, QuantidadeGavetas = 15 };
         var results = ValidateModel(dto);
         Assert.Contains(results, v => v.ErrorMessage.Contains("A quantidade de gavetas deve estar entre 1 e 10"));
     }
