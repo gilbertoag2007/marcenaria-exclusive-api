@@ -1,4 +1,5 @@
-﻿using MarcenariaExclusiveAPI.Domain.Enums;
+﻿using MarcenariaExclusiveAPI.Application.DTOs;
+using MarcenariaExclusiveAPI.Domain.Enums;
 
 namespace MarcenariaExclusiveAPI.Domain.Entities
 {
@@ -53,6 +54,22 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         /// Retorna uma representação em string do objeto Nivel.
         /// </summary>
         /// <returns>Uma string representando o nível e suas características.</returns>
+
+        /// <summary>
+        /// Construtor que recebe um objeto NivelDto como parâmetro.
+        /// </summary>
+        /// <param name="nivelDto">Objeto NivelDto.</param>
+        public Nivel(NivelDto nivelDto)
+        {
+            NumeroNivel = nivelDto.NumeroNivel;
+            AlturaNivel = nivelDto.AlturaNivel;
+            ConteudoNivel = nivelDto.ConteudoNivel;
+            QuantidadePrateleiras = nivelDto.QuantidadePrateleiras ?? 0;
+            QuantidadeGavetas = nivelDto.QuantidadeGavetas ?? 0;
+            QuantidadePortas = nivelDto.QuantidadePortas ?? 0;
+            QuantidadeDivisoes = nivelDto.QuantidadeDivisoes ?? 0;
+        }
+
         public override string ToString()
         {
             return $"numeroNivel: {NumeroNivel}, AlturaNivel: {AlturaNivel}, conteudoNivel: {ConteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}";

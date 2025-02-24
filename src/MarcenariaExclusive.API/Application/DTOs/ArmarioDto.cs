@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MarcenariaExclusiveAPI.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace MarcenariaExclusiveAPI.Application.DTOs
 {
@@ -26,6 +27,10 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
         public List<NivelDto> Niveis { get; set; } = new List<NivelDto>(); // Niveis que ocupam o espaco total do movel
 
         public ArmarioDto() { }
+
+        // Construtor que recebe um objeto Armario como parâmetro
+       
+
 
     }
 }

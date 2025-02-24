@@ -1,5 +1,5 @@
+
 using MarcenariaExclusiveAPI.Application.Interfaces;
-using MarcenariaExclusiveAPI.Application.Mappings;
 using MarcenariaExclusiveAPI.Infrastructure.Services;
 using Microsoft.Win32;
 
@@ -13,8 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IArmarioService, ArmarioService>();
-builder.Services.AddAutoMapper(typeof(ArmarioProfile));
-builder.Services.AddAutoMapper(typeof(NivelProfile));
+
+
 
 var app = builder.Build();
 

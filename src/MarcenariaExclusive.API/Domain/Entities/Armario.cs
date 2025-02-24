@@ -1,7 +1,6 @@
 ﻿
 
 using MarcenariaExclusiveAPI.Application.DTOs;
-using MarcenariaExclusiveAPI.Application.DTOs;
 using System.ComponentModel.DataAnnotations;
 
 namespace MarcenariaExclusiveAPI.Domain.Entities
@@ -46,5 +45,21 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         /// Construtor padrão da classe Armario.
         /// </summary>
         public Armario() { }
+
+        /// <summary>
+        /// Construtor que recebe um objeto ArmarioDto como parâmetro.
+        /// </summary>
+        /// <param name="armarioDto">Objeto ArmarioDto.</param>
+        public Armario(ArmarioDto armarioDto)
+        {
+            Email = armarioDto.Email;
+            NomeProjeto = armarioDto.NomeProjeto;
+            Altura = armarioDto.Altura;
+            Largura = armarioDto.Largura;
+            Profundidade = armarioDto.Profundidade;
+            Niveis = armarioDto.Niveis.Select(n => new Nivel(n)).ToList();
+        }
+
+
     }
 }
