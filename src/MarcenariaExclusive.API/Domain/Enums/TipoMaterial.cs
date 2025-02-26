@@ -16,6 +16,11 @@
         Parafuso45mm,
 
         /// <summary>
+        /// Parafuso de 45 milímetros.
+        /// </summary>
+        Parafuso30mm,
+
+        /// <summary>
         /// Puxador para gavetas.
         /// </summary>
         Puxador,
@@ -26,14 +31,19 @@
         Trilho,
 
         /// <summary>
-        /// Cantoneira para reforço de estruturas.
+        /// Cantoneira para .
         /// </summary>
-        Cantoneira,
+        CantoneiraPrateleira,
        
         /// <summary>
         /// Dobradiças para portas.
         /// </summary>
-        Dobradica
+        Dobradica,
+
+        /// <summary>
+        /// Cantoneira pequena para faces de gavetas.
+        /// </summary>
+        CantoneiraGaveta,
 
     }
 }

@@ -52,7 +52,7 @@ namespace MarcenariaExclusive.API.Application.DTOs
 
             Materiais = planoCorte.Materiais.Select(m => new MaterialDto
             {
-                QuantidadeMaterial = $"{m.Quantidade} - {m.TipoMaterial}{(m.Quantidade > 1 ? "s" : "")}"
+                Material = $"{m.Quantidade} - {m.TipoMaterial}{(m.Quantidade > 1 ? "s" : "")}"
                
             }).ToList();
 

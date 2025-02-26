@@ -36,9 +36,14 @@
         AcabamentoInferior,
 
         /// <summary>
-        /// Peça usada como divisão interna do móvel.
+        /// Peça usada como divisão  vertical interna do móvel.
         /// </summary>
-        DivisaoInterna,
+        DivisaoVerticalInterna,
+
+        /// <summary>
+        /// Peça  vertical tipo prateleira usada para separar os níveis.
+        /// </summary>
+        DivisaoHorizontalNivel,
 
         /// <summary>
         /// Peça usada como face da gaveta.
@@ -68,7 +73,13 @@
         /// <summary>
         /// Peça usada como porta de um dos níveis do armário.
         /// </summary>
-        PortaNivel
+        PortaNivel,
+
+        /// <summary>
+        /// Peça usada como prateleira dentro do nível.
+        /// </summary>
+        Prateleira
+
 
     }
-    }
+}

@@ -16,5 +16,33 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         /// Tipo do material.
         /// </summary>
         public TipoMaterial TipoMaterial { get; set; }
+
+        /// <summary>
+        /// Material alternativo caso não tenha o material principal.
+        /// </summary>
+        /// 
+        public string MaterialAlternativo { get; set; }
+
+        /// <summary>
+        /// Construtor padrão.
+        /// </summary>
+
+
+        public Material()
+        {
+        }
+
+        /// <summary>
+        /// Construtor com argumentos.
+        /// </summary>
+        /// <param name="quantidade">Quantidade do material disponível.</param>
+        /// <param name="tipoMaterial">Tipo do material.</param>
+        public Material(int quantidade, TipoMaterial tipoMaterial)
+        {
+            Quantidade = quantidade;
+            TipoMaterial = tipoMaterial;
+        }
+
     }
+
 }
