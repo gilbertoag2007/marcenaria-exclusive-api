@@ -36,14 +36,15 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         public int QuantidadeGavetas { get; set; }
 
         /// <summary>
-        /// Quantidade de portas dentro do nível.
-        /// </summary>
-        public int QuantidadePortas { get; set; }
-
-        /// <summary>
         /// Quantidade de divisões verticais internas.
         /// </summary>
         public int QuantidadeDivisoes { get; set; }
+
+
+        /// <summary>
+        /// Indica se o nível tem ou não fundo.
+        /// </summary>
+        public bool PossuiFundo{ get; set; }
 
         /// <summary>
         /// Construtor padrão da classe Nivel.
@@ -66,13 +67,12 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
             ConteudoNivel = nivelDto.ConteudoNivel;
             QuantidadePrateleiras = nivelDto.QuantidadePrateleiras ?? 0;
             QuantidadeGavetas = nivelDto.QuantidadeGavetas ?? 0;
-            QuantidadePortas = nivelDto.QuantidadePortas ?? 0;
             QuantidadeDivisoes = nivelDto.QuantidadeDivisoes ?? 0;
         }
 
         public override string ToString()
         {
-            return $"numeroNivel: {NumeroNivel}, AlturaNivel: {AlturaNivel}, conteudoNivel: {ConteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadePortas: {QuantidadePortas}, QuantidadeDivisoes: {QuantidadeDivisoes}";
+            return $"numeroNivel: {NumeroNivel}, AlturaNivel: {AlturaNivel}, conteudoNivel: {ConteudoNivel}, QuantidadePrateleiras: {QuantidadePrateleiras}, QuantidadeGavetas: {QuantidadeGavetas}, QuantidadeDivisoes: {QuantidadeDivisoes}";
         }
     }
 }

@@ -1,4 +1,6 @@
 
+using MarcenariaExclusive.API.Application.Interfaces;
+using MarcenariaExclusive.API.Infrastructure.Services;
 using MarcenariaExclusiveAPI.Application.Interfaces;
 using MarcenariaExclusiveAPI.Infrastructure.Services;
 using Microsoft.Win32;
@@ -13,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IArmarioService, ArmarioService>();
-
+builder.Services.AddScoped<IArmarioValidacaoService, ArmarioValidacaoService>();
 
 
 var app = builder.Build();

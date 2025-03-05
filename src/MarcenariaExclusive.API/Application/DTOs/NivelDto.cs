@@ -15,17 +15,16 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
         [Required(ErrorMessage = "O conteúdo do nível é obrigatório.")]
         public ConteudoNivel ConteudoNivel { get; set; } // tipo de conteudo que ocupa o espaço do nivel dentro do movel
 
-        [Range(1, 100, ErrorMessage = "O percentual de ocupação do espaço do nível deve estar entre 10 e 100.")]
         public int? QuantidadePrateleiras { get; set; } // Quantidade de prateleiras internas dentro do nivel
 
         [Range(1, 10, ErrorMessage = "A quantidade de gavetas deve estar entre 1 e 10.")]
         public int? QuantidadeGavetas { get; set; } // Quantidade de gavetas dentro do nivel
 
-        [Range(1, 4, ErrorMessage = "A quantidade de portas deve estar entre 1 e 4.")]
-        public int? QuantidadePortas { get; set; } // Quantidade de portas dentro do nivel
-
-        [Range(1, 10, ErrorMessage = "A quantidade de divi deve estar entre 1 e 4.\"")]
+        [Range(1, 10, ErrorMessage = "A quantidade de divi deve estar entre 1 e 4.")]
         public int? QuantidadeDivisoes { get; set; } // Quantidade de divisoes verticais internas
+
+        public bool PossuiFundo { get; set; } // Quantidade de divisoes verticais internas
+
 
         public NivelDto() { }
 

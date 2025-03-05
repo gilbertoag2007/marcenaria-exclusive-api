@@ -23,8 +23,17 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
         [Range(20, 70, ErrorMessage = "A profundidade deve estar entre 20 e 70 cm.")]
         public int Profundidade { get; set; } // Profundidade do movel em centimetros
 
+        [Required(ErrorMessage = "É obrigatório informar se o armário tem ou não acabamento inferior.")]
+        public bool PossuiAcabamentoInferior { get; set; } // Indica se o armario possui acabamento inferior
+
+        [Required(ErrorMessage = "É obrigatório informar se o armário tem ou não acabamento inferior.")]
+        public bool PossuiAcabamentoSuperior { get; set; } // Indica se o armario possui acabamento superior
+
+
         [MinLength(1, ErrorMessage = "O armário deve ter pelo menos um nível.")]
         public List<NivelDto> Niveis { get; set; } = new List<NivelDto>(); // Niveis que ocupam o espaco total do movel
+
+        public List<PortaDto> Portas { get; set; } = new List<PortaDto>(); // portas para o armário
 
         public ArmarioDto() { }
 

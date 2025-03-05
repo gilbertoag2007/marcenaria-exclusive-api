@@ -9,28 +9,23 @@ namespace MarcenariaExclusiveAPI.Domain.Enums
     public enum ConteudoNivel
     {
         /// <summary>
-        /// Apenas portas.
+        /// Prateleiras internas.
         /// </summary>
-        Portas,
-
-        /// <summary>
-        /// Portas e prateleiras internas.
-        /// </summary>
-        PortasPrateleirasInternas,
-
+        Prateleiras,
         /// <summary>
         /// Contém gavetas.
         /// </summary>
         Gavetas,
-
+          /// <summary>
+          /// Divisão Vertical dentro do nível.
+          /// </summary>
+        DivisoesVerticais,
         /// <summary>
-        /// Espaço sem portas, gavetas ou prateleiras internas, mas com fundo.
+        /// Nível sem contéúdo
         /// </summary>
-        VazadoComFundo,
+        Livre
 
-        /// <summary>
-        /// Espaço sem portas, gavetas ou prateleiras internas, mas sem fundo.
-        /// </summary>
-        VazadoSemFundo
+
+
     }
 }

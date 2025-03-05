@@ -1,5 +1,6 @@
 ﻿
 
+using MarcenariaExclusive.API.Domain.Entities;
 using MarcenariaExclusiveAPI.Application.DTOs;
 using System.ComponentModel.DataAnnotations;
 
@@ -37,9 +38,25 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
         public int Profundidade { get; set; }
 
         /// <summary>
+        /// Indica se o armario tem acabamento inferior.
+        /// </summary>
+        public bool PossuiAcabamentoInferior { get; set; }
+
+        /// <summary>
+        /// Indica se o armario tem acabamento superior.
+        /// </summary>
+        public bool PossuiAcabamentoSuperior { get; set; }
+
+        /// <summary>
         /// Lista de níveis que ocupam o espaço total do móvel.
         /// </summary>
         public List<Nivel> Niveis { get; set; } = new List<Nivel>();
+
+
+        /// <summary>
+        /// Lista de portas que ocupam o espaço total do móvel.
+        /// </summary>
+        public List<Porta> Portas { get; set; } = new List<Porta>();
 
         /// <summary>
         /// Construtor padrão da classe Armario.
@@ -57,6 +74,9 @@ namespace MarcenariaExclusiveAPI.Domain.Entities
             Altura = armarioDto.Altura;
             Largura = armarioDto.Largura;
             Profundidade = armarioDto.Profundidade;
+            PossuiAcabamentoInferior = armarioDto.PossuiAcabamentoInferior;
+            PossuiAcabamentoSuperior = armarioDto.PossuiAcabamentoSuperior;
+            Portas = armarioDto.Portas.Select(p => new Porta(p)).ToList();
             Niveis = armarioDto.Niveis.Select(n => new Nivel(n)).ToList();
         }
 

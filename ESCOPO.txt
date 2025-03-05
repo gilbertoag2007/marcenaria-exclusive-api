@@ -1,0 +1,22 @@
+1 - Validações s
+
+Ajude a criar uma validação que valide as quantidades de acordo com seu respectivo conteúdo.
+As regras são:
+campo QuantidadePrateleiras só pode ser maior que 1 quando o ConteudoNivel for igual Prateleiras.
+campo Gavetas só pode ser maior que 1 quando o ConteudoNivel for igual QuantidadeGavetas.
+campo DivisaoVertical só pode ser maior que 1 quando o ConteudoNivel for igual QuantidadeDivisoes.
+
+
+
+
+
+Ajude a criar uma validação que verifique se cada nível coberto pelas Portas tem o atributo possuiFundo = true.
+
+Caso algum não seja, lançe a exception ConteudoNivelException com a mensagem de erro "O nível {numeroNivel} obrigatoriamente deve possuir fundo por ser coberto por uma porta";
+
+
+2 - Calculo Plano de Corte
+
+3 - Separação Clean architecture
+
+4 - Inclusão de arquivo de log
