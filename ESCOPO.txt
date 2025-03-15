@@ -1,22 +1,22 @@
 1 - Validações s
 
-Ajude a criar uma validação que valide as quantidades de acordo com seu respectivo conteúdo.
-As regras são:
-campo QuantidadePrateleiras só pode ser maior que 1 quando o ConteudoNivel for igual Prateleiras.
-campo Gavetas só pode ser maior que 1 quando o ConteudoNivel for igual QuantidadeGavetas.
-campo DivisaoVertical só pode ser maior que 1 quando o ConteudoNivel for igual QuantidadeDivisoes.
-
-
-
-
-
-Ajude a criar uma validação que verifique se cada nível coberto pelas Portas tem o atributo possuiFundo = true.
-
-Caso algum não seja, lançe a exception ConteudoNivelException com a mensagem de erro "O nível {numeroNivel} obrigatoriamente deve possuir fundo por ser coberto por uma porta";
-
-
 2 - Calculo Plano de Corte
 
 3 - Separação Clean architecture
 
 4 - Inclusão de arquivo de log
+
+
+Ajude a criar uma função para calcular as  peças dos conteúdos dos níveis  que retorne uma lista de Pecas seguindo as regras:
+Se o ConteudoNivel for igual a Prateleiras, então inclua uma lista de peças correspondentes a quantidade prateleiras.
+Se o ConteudoNivel for igual Gavetas, chame o método CalcularPecaGavetas para gerar as peças das gavetas
+Se o ConteudoNivel for igual DivisoesVerticais então inclua uma lista de peças correspondentes a quantidade divisoesVerticais.
+
+dotnet add src/Application reference src/Domain
+dotnet add src/Infrastructure reference src/Application
+dotnet add src/Presentation reference src/Application
+dotnet add src/Presentation reference src/Infrastructure
+dotnet add src/Presentation reference src/Domain
+
+
+C:\\Users\\gsc\\Documents\\PROJETOS_NET_LOCAL\\CriadorImage\\saida.png
