@@ -253,7 +253,7 @@ namespace MarcenariaExclusiveAPI.Infrastructure.Services
             {
                 if (nivel.PossuiFundo)
                 {
-                    fundosNiveis.Add(new Peca(armario.Largura, nivel.AlturaNivel, Constantes.EspessuraMDFFundo,  FinalidadePeca.FundoArmario));
+                    fundosNiveis.Add(new Peca(armario.Largura-0.5, nivel.AlturaNivel - 0.5, Constantes.EspessuraMDFFundo,  FinalidadePeca.FundoArmario)); // redução de meio centimetros no fundo para melhor acabamento.
                 }
             }
 
@@ -288,15 +288,16 @@ namespace MarcenariaExclusiveAPI.Infrastructure.Services
         private List<PecaDto> AgruparPecas(List<Peca> listaPecas)
         {
             var pecasAgrupadas = listaPecas
-                .GroupBy(p => p.FinalidadePeca)
-                .Select(g => new PecaDto
-                {
-                    Dimensao = $"{g.First().Altura} cm x {g.First().Largura} cm",
-                    Espessura = $"{(g.First().Espessura * 10)} mm",
-                    Quantidade = g.Count().ToString(),
-                    FinalidadePeca = EnumExtensions.GetDescription(g.Key)
-                })
-                .ToList();
+            
+            .GroupBy(p => new { p.FinalidadePeca, p.Altura, p.Largura })
+            .Select(g => new PecaDto
+            {
+                Dimensao = $"{g.Key.Altura.ToString("0.##")} cm x {g.Key.Largura.ToString("0.##")} cm",
+                Espessura = $"{(g.First().Espessura * 10)} mm",
+                Quantidade = g.Count().ToString(),
+                FinalidadePeca = EnumExtensions.GetDescription(g.Key.FinalidadePeca)
+            })
+            .ToList();
 
             return pecasAgrupadas;
         }

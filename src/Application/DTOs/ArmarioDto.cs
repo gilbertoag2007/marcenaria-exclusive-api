@@ -16,7 +16,7 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
         public int Altura { get; set; } // Altura em centimetros
 
         [Required(ErrorMessage = "A largura é obrigatória.")]
-        [Range(30, 200, ErrorMessage = "A largura deve estar entre 30 e 200 cm.")]
+        [Range(30, 120, ErrorMessage = "A largura deve estar entre 30 e 100 cm.")]
         public int Largura { get; set; } // Largura em centimetros
 
         [Required(ErrorMessage = "A profundidade é obrigatória.")]

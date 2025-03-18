@@ -23,7 +23,7 @@ public void ValidarEspecificacoesArmario(Armario armario)
             ValidarQuantidadePrateleiras(armario);
 
             // Validações de divisões internas
-            ValidarDivisoesInternas(armario);
+            ValidarQuantidadeDivisoesInternas(armario);
 
             // Validações de conteúdo do nível
             ValidarConteudoNivelSimultaneo(armario);
@@ -36,8 +36,8 @@ public void ValidarEspecificacoesArmario(Armario armario)
             ValidarProfundidadeGavetas(armario);
 
             // validação para portas
-            ValidarConteudoNiveisCobertosPorPortas(armario);
-
+      
+            ValidarPortaCobreNiveisComConteudosDiferentes(armario);
 
         }
 
@@ -47,7 +47,7 @@ public void ValidarEspecificacoesArmario(Armario armario)
         /// </summary>
         /// <param name="armario">O objeto Armario a ser validado.</param>
         /// <exception cref="DimensoesException">Lançada quando a quantidade de divisões internas verticais é insuficiente para a quantidade de portas.</exception>
-        public void ValidarDivisoesInternas(Armario armario)
+        public void ValidarQuantidadeDivisoesInternas(Armario armario)
         {
             foreach (var porta in armario.Portas)
             {
@@ -61,14 +61,7 @@ public void ValidarEspecificacoesArmario(Armario armario)
                 {
                     quantidadeDivisaoInternaNecessaria = 2;
                 }
-                else if (armario.Portas.Count >= 7 && armario.Portas.Count <= 8)
-                {
-                    quantidadeDivisaoInternaNecessaria = 3;
-                }
-                else if (armario.Portas.Count >= 9 && armario.Portas.Count <= 10)
-                {
-                    quantidadeDivisaoInternaNecessaria = 4;
-                }
+                
 
                 if (quantidadeDivisaoInternaNecessaria > 0)
                 {
@@ -97,7 +90,7 @@ public void ValidarEspecificacoesArmario(Armario armario)
                 {
                     double alturaDisponivel = nivel.AlturaNivel;
                     double espessuraPrateleira = 1.5;
-                    double areaLivre = 10.0;
+                    double areaLivre = 20.0;
                     double alturaTotalPrateleiras = (espessuraPrateleira + areaLivre) * nivel.QuantidadePrateleiras;
 
                     if (alturaTotalPrateleiras > alturaDisponivel)
@@ -377,31 +370,42 @@ public void ValidarEspecificacoesArmario(Armario armario)
                     // Verifica se o nível contém gavetas
                     if (nivel.ConteudoNivel == ConteudoNivel.Gavetas)
                     {
-                        // Lança uma exceção se a profundidade do armário for insuficiente para conter gavetas
-                        throw new ConteudoNivelException($"O nível {nivel.NumeroNivel} não pode conter gavetas, pois a profundidade do armário é inferior a 20 cm.");
+     
                     }
                 }
             }
         }
+
+        // Lança uma exceção se a profundidade do armário for insuficiente para conter gavetas
         /// <summary>
-        /// Valida se os níveis cobertos por portas possuem conteúdo do tipo DivisoesVerticais.
+        /// Valida se uma porta cobre mais de um nível com diferentes tipos de conteúdo quando o armário tem no máximo duas portas.
         /// </summary>
         /// <param name="armario">O objeto Armario a ser validado.</param>
-        /// <exception cref="ConteudoNivelException">Lançada quando um nível coberto por uma porta não possui conteúdo do tipo DivisoesVerticais.</exception>
-        public void ValidarConteudoNiveisCobertosPorPortas(Armario armario)
+        /// <exception cref="ConteudoNivelException">Lançada quando uma porta cobre mais de um nível com diferentes tipos de conteúdo e o armário tem mais de duas portas.</exception>
+        public void ValidarPortaCobreNiveisComConteudosDiferentes(Armario armario)
         {
-            foreach (var porta in armario.Portas)
+            if (armario.Portas.Count > 2)
             {
-                foreach (var nivelCobertura in porta.NiveisCobertura)
+                foreach (var porta in armario.Portas)
                 {
-                    var nivel = armario.Niveis.FirstOrDefault(n => n.NumeroNivel == nivelCobertura);
-                    if (nivel != null && nivel.ConteudoNivel != ConteudoNivel.DivisoesVerticais)
+                    var conteudos = new HashSet<ConteudoNivel>();
+                    foreach (var nivelCobertura in porta.NiveisCobertura)
                     {
-                        throw new ConteudoNivelException($"O nível {nivel.NumeroNivel} coberto pela porta deve ter conteúdo do tipo DivisoesVerticais.");
+                        var nivel = armario.Niveis.FirstOrDefault(n => n.NumeroNivel == nivelCobertura);
+                        if (nivel != null)
+                        {
+                            conteudos.Add(nivel.ConteudoNivel);
+                        }
+                    }
+                    if (conteudos.Count > 1)
+                    {
+                        throw new ConteudoNivelException($"A porta que cobre os níveis {string.Join(", ", porta.NiveisCobertura)} não pode cobrir níveis com diferentes tipos de conteúdo quando o armário tem mais de duas portas.");
                     }
                 }
             }
         }
+
+        
       
     }
 }

@@ -12,7 +12,7 @@ namespace MarcenariaExclusiveAPI.Application.DTOs
         /// Quantidade de portas.
         /// </summary>
         [Required(ErrorMessage = "A quantidade de portas é obrigatória.")]
-        [Range(1, 10, ErrorMessage = "A quantidade de portas deve estar entre 1 e 10.")]
+        [Range(1, 5, ErrorMessage = "A quantidade de portas deve estar entre 1 e 5.")]
         public int QuantidadePortas { get; set; }
 
         /// <summary>
